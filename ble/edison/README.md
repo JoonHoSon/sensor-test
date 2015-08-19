@@ -1,3 +1,13 @@
+# Intel edison에서 Bluethooth 활성화 방법
+```bash
+$ rfkill unblock bluetooth
+$ hciconfig hci0 up
+$ rfkill list
+```
+
+`rfkill list`명령어의 실행 결과가 다음과 같으면 성공입니다.
+![bluetooth 활성화 결과](https://docs.google.com/uc?id=0B02RRVY3KrmeV2d0VVBUZTkxVDg)
+
 # Intel edison gatttool 설치방법
 에디슨에는 gatttool이 설치되어 있지 않습니다. 또한 opkg로 bluez를 설치해도 gatttool은 포함되어 있지 않습니다.[^ref1]  
 따라서, 아래의 과정을 통해 gatttool을 설치합니다.
